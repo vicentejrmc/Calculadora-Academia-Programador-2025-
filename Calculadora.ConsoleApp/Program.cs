@@ -18,6 +18,7 @@
                 Console.WriteLine(" 2 - Subtrair");
                 Console.WriteLine(" 3 - Multiplicar");
                 Console.WriteLine(" 4 - Divisão");
+                Console.WriteLine(" 5 - Tabuada");
                 Console.WriteLine(" S - Sair");
 
                 Console.WriteLine();
@@ -28,8 +29,27 @@
                 {
                     break;
                 }
+                else if(opcao == "5")
+                {
+                    Console.WriteLine("--------------------------");
+                    Console.WriteLine("Tabuada");
+                    Console.WriteLine("---------------------------");
 
-                Console.Write("Digite o primeiro numero: ");
+                    Console.Write("Digite o Numero: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
+                    
+                    for(int cont = 1; cont <= 10; cont++)
+                    {
+                        // string LinhaTabuada = numeroTabuada + " X " + cont + " = " + resultadoTabuada;
+                        int resultadoTabuada = numeroTabuada * cont;
+                        Console.WriteLine($"{numeroTabuada} x {cont} = {resultadoTabuada}");
+                    }
+                    Console.ReadLine();
+                    continue;
+                }
+
+
+                    Console.Write("Digite o primeiro numero: ");
                 string primeiroNumeroString = Console.ReadLine();
                 decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString);
 
