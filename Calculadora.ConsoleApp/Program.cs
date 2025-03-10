@@ -52,6 +52,12 @@
                 }
                 else if(opcao == "4")
                 {
+                    if(segundoNumero == 0)
+                    {
+                        Console.WriteLine("Não é possível dividir um numeor por zero.");
+                        Console.ReadLine();
+                        continue; // Retorna o codigo para o inicio do loop
+                    }
                     resultado = primeiroNumero / segundoNumero;
                 }
 
@@ -63,7 +69,7 @@
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 if (opcaoContinuar != "S") ;
-                    break;  // Quantod a condição só tem uma linha não se é necessario o uso de{}
+                    break;  // Quando a condição só tem uma linha não se é necessario o uso de{}
                
             }   
 
