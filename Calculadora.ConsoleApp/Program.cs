@@ -16,6 +16,8 @@
 
                 Console.WriteLine(" 1 - Somar");
                 Console.WriteLine(" 2 - Subtrair");
+                Console.WriteLine(" 3 - Multiplicar");
+                Console.WriteLine(" 4 - Divisão");
                 Console.WriteLine(" S - Sair");
 
                 Console.WriteLine();
@@ -29,33 +31,40 @@
 
                 Console.Write("Digite o primeiro numero: ");
                 string primeiroNumeroString = Console.ReadLine();
-                int primeiroNumero = Convert.ToInt32(primeiroNumeroString);
+                decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString);
 
                 Console.Write("Digite o segundo numero: ");
-                int segundoNumero = Convert.ToInt32(Console.ReadLine());
+                decimal segundoNumero = Convert.ToDecimal(Console.ReadLine());
 
-                int resultado = 0;
+                decimal resultado = 0;
 
                 if (opcao == "1")
                 {
                     resultado = primeiroNumero + segundoNumero;
                 }
-                else
+                else if(opcao == "2")
                 {
                     resultado = primeiroNumero - segundoNumero;
                 }
+                else if(opcao == "3")
+                {
+                    resultado = primeiroNumero * segundoNumero;
+                }
+                else if(opcao == "4")
+                {
+                    resultado = primeiroNumero / segundoNumero;
+                }
 
-                Console.WriteLine("--------------------------");
-                Console.WriteLine("Resultado = " + resultado);
+                    Console.WriteLine("--------------------------");
+                Console.WriteLine("Resultado = " + resultado.ToString("F3"));
                 Console.WriteLine("---------------------------");
 
                 Console.Write("Deseja continuar? (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
-                if(opcaoContinuar != "S")
-                {
-                    break;
-                }
+                if (opcaoContinuar != "S") ;
+                    break;  // Quantod a condição só tem uma linha não se é necessario o uso de{}
+               
             }   
 
             // break; Também pode ser usado ao final de um laço de repetição while para quebrar o Loop
