@@ -66,7 +66,7 @@ namespace Calculadora.ConsoleApp
                             Console.WriteLine(historicoOperacoes[contador]);
                     }
 
-                    Console.WriteLine("Pressione [Enter] para Continuar");
+                    Console.WriteLine("Pressione [shaEnter] para Continuar");
                     Console.ReadLine();
                     continue;
                 }
