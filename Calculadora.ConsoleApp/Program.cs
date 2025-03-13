@@ -6,30 +6,13 @@ namespace Calculadora.ConsoleApp
     {
         static void Main(string[] args)
         {
-            // bool representa um bit podedendo ser 0 ou 1, apenas um valor
             string[] historicoOperacoes = new string[100];
             int contadorHistorico = 0;
 
-            while (true) //true == true dessa forma sempre será verdadeiro e só será quebrado o Loop quado
-                // a condiçãode break; for executada. ** Porém, ao usar dessa forma deve-se ter mais atenção**
+            while (true) 
             {
-                Console.Clear();
-                Console.WriteLine("--------------------------");
-                Console.WriteLine("Calculadora Tabajara 2025");
-                Console.WriteLine("---------------------------");
 
-                Console.WriteLine(" 1 - Somar");
-                Console.WriteLine(" 2 - Subtrair");
-                Console.WriteLine(" 3 - Multiplicar");
-                Console.WriteLine(" 4 - Divisão");
-                Console.WriteLine(" 5 - Tabuada");
-                Console.WriteLine(" 6 - Historico");
-                Console.WriteLine(" S - Sair");
-               
-                
-                Console.WriteLine();
-                Console.Write("Escolha uma opção: ");
-                string opcao = Console.ReadLine().ToUpper(); // Converte para Maiúsculo
+                string opcao = ExibirMenu();
 
                     if (opcao == "S")
                 {
@@ -46,7 +29,6 @@ namespace Calculadora.ConsoleApp
                     
                     for(int cont = 1; cont <= 10; cont++)
                     {
-                        // string LinhaTabuada = numeroTabuada + " X " + cont + " = " + resultadoTabuada;
                         int resultadoTabuada = numeroTabuada * cont;
                         Console.WriteLine($"{numeroTabuada} x {cont} = {resultadoTabuada}");
                     }
@@ -102,7 +84,7 @@ namespace Calculadora.ConsoleApp
                     {
                         Console.WriteLine("Não é possível dividir um numeor por zero.");
                         Console.ReadLine();
-                        continue; // Retorna o codigo para o inicio do loop
+                        continue; 
                     }
                     resultado = primeiroNumero / segundoNumero;
                     historicoOperacoes[contadorHistorico] = $"{primeiroNumero} / {segundoNumero} = {resultado}";
@@ -119,12 +101,36 @@ namespace Calculadora.ConsoleApp
                 string opcaoContinuar = Console.ReadLine().ToUpper();
 
                 if (opcaoContinuar != "S")
-                    break;  // Quando a condição só tem uma linha não se é necessario o uso de{}
-               
+                    break;             
             }   
 
             // break; Também pode ser usado ao final de um laço de repetição while para quebrar o Loop
             // return; quebra o programa inteiro retornando para o Main, o break; quebra apenas o loop
         } 
+    
+        
+        static string ExibirMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("--------------------------");
+            Console.WriteLine("Calculadora Tabajara 2025");
+            Console.WriteLine("---------------------------");
+
+            Console.WriteLine(" 1 - Somar");
+            Console.WriteLine(" 2 - Subtrair");
+            Console.WriteLine(" 3 - Multiplicar");
+            Console.WriteLine(" 4 - Divisão");
+            Console.WriteLine(" 5 - Tabuada");
+            Console.WriteLine(" 6 - Historico");
+            Console.WriteLine(" S - Sair");
+
+            Console.WriteLine();
+            Console.Write("Escolha uma opção: ");
+
+            string opcao = Console.ReadLine()!.ToUpper();
+            return opcao;
+        }
+
     }
 }
+              
