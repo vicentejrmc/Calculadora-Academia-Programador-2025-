@@ -36,7 +36,6 @@ internal class Program
         }
     } 
       
-
         //Funções e Metodos
     static string ExibirMenu()
     {
@@ -57,6 +56,7 @@ internal class Program
         Console.Write("Escolha uma opção: ");
 
         string opcao = Console.ReadLine()!.ToUpper();
+
         return opcao;
     }
 
