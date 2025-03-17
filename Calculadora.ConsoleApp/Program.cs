@@ -91,11 +91,12 @@ internal class Program
         Console.Write("Digite o Numero: ");
         int numeroTabuada = Convert.ToInt32(Console.ReadLine());
 
-        for (int cont = 1; cont <= 10; cont++)
-        {
-            int resultadoTabuada = numeroTabuada * cont;
-            Console.WriteLine($"{numeroTabuada} x {cont} = {resultadoTabuada}");
-        }
+        string[] linhasTabuada = Calculadora.GerarTabuada(numeroTabuada);
+
+        for (int cont = 0; cont < linhasTabuada.Length; cont++)
+            Console.WriteLine(linhasTabuada[cont]);
+
+        Console.WriteLine("Pressione [Enter] para continuar.");
         Console.ReadLine();
     }
 

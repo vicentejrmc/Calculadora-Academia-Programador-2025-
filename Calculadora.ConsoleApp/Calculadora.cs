@@ -39,6 +39,19 @@ public static class Calculadora // definir a classe como static.
         return resultado;
     }
 
+    public static string[] GerarTabuada(int numeroTabuada)
+    {
+        string[] linhasDaTabuada = new string[10];
+
+        for (int cont = 1; cont <= 10; cont++)
+        {
+            int resultadoTabuada = numeroTabuada * cont;
+            linhasDaTabuada[cont - 1] = $"{numeroTabuada} x {cont} = {resultadoTabuada}";
+        }
+
+        return linhasDaTabuada;
+    }
+
     public static string[] ObterHistoricoDeOperacoes()
     {
         return historicoOperacoes;
