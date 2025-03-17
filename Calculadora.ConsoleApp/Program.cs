@@ -6,12 +6,10 @@ namespace Calculadora.ConsoleApp
     {
         static void Main(string[] args)
         {
-            // bool representa um bit podedendo ser 0 ou 1, apenas um valor
             string[] historicoOperacoes = new string[100];
             int contadorHistorico = 0;
 
-            while (true) //true == true dessa forma sempre será verdadeiro e só será quebrado o Loop quado
-                // a condiçãode break; for executada. ** Porém, ao usar dessa forma deve-se ter mais atenção**
+            while (true) 
             {
                 Console.Clear();
                 Console.WriteLine("--------------------------");
@@ -24,13 +22,11 @@ namespace Calculadora.ConsoleApp
                 Console.WriteLine(" 4 - Divisão");
                 Console.WriteLine(" 5 - Tabuada");
                 Console.WriteLine(" 6 - Historico");
-                Console.WriteLine(" S - Sair");
-               
+                Console.WriteLine(" S - Sair");            
                 
                 Console.WriteLine();
                 Console.Write("Escolha uma opção: ");
-                string opcao = Console.ReadLine().ToUpper(); // Converte para Maiúsculo
-
+                string opcao = Console.ReadLine().ToUpper();
                     if (opcao == "S")
                 {
                     break;
@@ -78,7 +74,6 @@ namespace Calculadora.ConsoleApp
                 Console.Write("Digite o segundo numero: ");
                 decimal segundoNumero = Convert.ToDecimal(Console.ReadLine());
 
-
                 decimal resultado = 0;
 
                 if (opcao == "1")
@@ -112,8 +107,7 @@ namespace Calculadora.ConsoleApp
                 
                     Console.WriteLine("--------------------------");
                 Console.WriteLine("Resultado = " + resultado.ToString("F3"));
-                Console.WriteLine("---------------------------");              
-                
+                Console.WriteLine("---------------------------");                              
 
                 Console.Write("Deseja continuar? (S/N): ");
                 string opcaoContinuar = Console.ReadLine().ToUpper();
